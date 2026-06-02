@@ -1,0 +1,3 @@
+C:/Users/danilos/Desktop/Laboratorio 1 Estructura de Datos II/build/CMakeFiles/lab1.dir
+C:/Users/danilos/Desktop/Laboratorio 1 Estructura de Datos II/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/danilos/Desktop/Laboratorio 1 Estructura de Datos II/build/CMakeFiles/ZERO_CHECK.dir
