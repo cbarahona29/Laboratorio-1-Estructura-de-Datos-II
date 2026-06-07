@@ -364,8 +364,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\danilos\Desktop\Laboratorio 1 Estructura de Datos II\main.cpp" />
-    <ClCompile Include="C:\Users\danilos\Desktop\Laboratorio 1 Estructura de Datos II\CliArgs.cpp" />
+    <ClCompile Include="C:\Users\danilos\Desktop\Laboratorio 1 Estructura de Datos II\src\main.cpp" />
+    <ClCompile Include="C:\Users\danilos\Desktop\Laboratorio 1 Estructura de Datos II\src\Alumno.cpp" />
+    <ClCompile Include="C:\Users\danilos\Desktop\Laboratorio 1 Estructura de Datos II\src\Indice.cpp" />
+    <ClCompile Include="C:\Users\danilos\Desktop\Laboratorio 1 Estructura de Datos II\src\Registro.cpp" />
+    <ClCompile Include="C:\Users\danilos\Desktop\Laboratorio 1 Estructura de Datos II\src\CliArgs.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

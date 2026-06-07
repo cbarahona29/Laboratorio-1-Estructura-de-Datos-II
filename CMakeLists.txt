@@ -6,4 +6,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
 
-add_executable(lab1 main.cpp CliArgs.cpp)
+add_executable(lab1
+    src/main.cpp
+    src/Alumno.cpp
+    src/Indice.cpp
+    src/Registro.cpp
+    src/CliArgs.cpp
+)
