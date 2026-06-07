@@ -48,4 +48,4 @@ Alumno leerRegistro(std::fstream& dat, const EntradaIndice& entrada) {
     dat.read(&a.nombre[0], longNombre);
 
     return a;
-}
+} 

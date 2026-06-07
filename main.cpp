@@ -5,7 +5,6 @@
 #include "Indice.h"
 #include "Registro.h"
 
-// Rutas de los archivos de datos
 const std::string ARCHIVO_DAT    = "alumnos.dat";
 const std::string ARCHIVO_INDICE = "indice.dat";
 
