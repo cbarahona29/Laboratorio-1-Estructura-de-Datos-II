@@ -1,0 +1,4 @@
+build/
+*.dat
+*.exe
+.vscode/
