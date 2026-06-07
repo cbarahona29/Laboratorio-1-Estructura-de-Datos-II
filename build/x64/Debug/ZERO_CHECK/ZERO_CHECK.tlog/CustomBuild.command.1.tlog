@@ -1,0 +1,10 @@
+^C:\USERS\DANILOS\DESKTOP\LABORATORIO 1 ESTRUCTURA DE DATOS II\BUILD\CMAKEFILES\A454C24682933AFEF1304533ACB1A6B0\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/danilos/Desktop/Laboratorio 1 Estructura de Datos II" "-BC:/Users/danilos/Desktop/Laboratorio 1 Estructura de Datos II/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/danilos/Desktop/Laboratorio 1 Estructura de Datos II/build/Lab1.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

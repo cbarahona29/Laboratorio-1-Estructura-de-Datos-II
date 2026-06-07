@@ -1,49 +1,54 @@
 #include <iostream>
-#include "CliArgs.hpp"
+#include <fstream>
+#include <vector>
+#include <string>
+#include <cstring>
+#include "json.hpp"
 
-int main(int argc, const char* argv[]) {
-    CliArgs args(argc, argv);
+using json = nlohmann::json;
 
-    if (!args.isGood()) {
-        args.printUsage();
-        return 1;
+// ── Registro de alumno ──────────────────────────────────
+struct Alumno {
+    char        no_cuenta[10];  // llave primaria, fijo 10 bytes
+    std::string nombre;         // longitud variable
+    char        telefono[12];   // fijo 12 bytes
+    int         edad;           // 4 bytes
+    char        fecha[8];       // fijo 8 bytes  (AAAAMMDD)
+};
+
+// ── Entrada del índice primario ─────────────────────────
+struct EntradaIndice {
+    char  cuenta[10];  // llave de búsqueda
+    long  offset;      // posición en bytes dentro del .dat
+    int   tamanio;     // tamaño total del registro
+};
+
+// ── Leer alumno desde archivo JSON ──────────────────────
+Alumno leerDesdeJSON(const std::string& rutaArchivo) {
+    // Abrir el archivo
+    std::ifstream archivo(rutaArchivo);
+    if (!archivo.is_open()) {
+        throw std::runtime_error("No se pudo abrir el archivo: " + rutaArchivo);
     }
 
-    std::string parametro = args.getArgument();
+    // Parsear el JSON
+    json j;
+    archivo >> j;
 
-    std::cout << "    PRUEBA DE COMANDOS     \n";
+    // Llenar el struct
+    Alumno a;
 
-    switch (args.cliCommand().value()) {
-        case CliCommand::Agregar:
-            std::cout << "Comando detectado: agregar\n";
-            std::cout << "test\n";
-            break;
+    // Campos fijos — copiamos con strncpy para respetar el tamaño exacto
+    strncpy(a.no_cuenta, j["no_cuenta"].get<std::string>().c_str(), 10);
+    strncpy(a.telefono,  j["telefono"].get<std::string>().c_str(),  12);
+    strncpy(a.fecha,     j["fecha"].get<std::string>().c_str(),      8);
 
-        case CliCommand::Eliminar:
-            std::cout << "Comando detectado: eliminar\n";
-            std::cout << "test\n";
-            break;
+    // Campo variable — string directo
+    a.nombre = j["nombre"].get<std::string>();
 
-        case CliCommand::Buscar:
-            std::cout << "Comando detectado: buscar\n";
-            std::cout << "test\n";
-            break;
+    // Entero
+    a.edad = j["edad"].get<int>();
 
-        case CliCommand::Actualizar:
-            std::cout << "Comando detectado: actualizar\n";
-            std::cout << "test\n";
-            break;
-
-        case CliCommand::CleanUp:
-            std::cout << "Comando detectado: clean-up\n";
-            std::cout << "test\n";
-            break;
-
-        default:
-            std::cout << "[!] Comando no manejado en el switch.\n";
-            break;
-    }
-
-
-    return 0;
+    return a;
 }
+

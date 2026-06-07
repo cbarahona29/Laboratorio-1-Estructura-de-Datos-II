@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\danilos\Desktop\Laboratorio 1 Estructura de Datos II\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\danilos\Desktop\Laboratorio 1 Estructura de Datos II\CliArgs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\danilos\Desktop\Laboratorio 1 Estructura de Datos II\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{47955D79-75C7-3DF6-B528-3C52972D83E6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
