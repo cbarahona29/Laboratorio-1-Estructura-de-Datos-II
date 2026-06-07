@@ -2,13 +2,11 @@
 #include "CliArgs.hpp"
 
 void CliArgs::printUsage() {
-    std::cout << "Uso: " << program << " <comando> [argumento]\n\n";
     std::cout << "Comandos requeridos:\n";
     std::cout << "  agregar <archivo_json>    \n";
     std::cout << "  eliminar <no_cuenta>      \n";
     std::cout << "  buscar <no_cuenta>        \n";
     std::cout << "  actualizar <archivo_json> \n";
-    std::cout << "  clean-up                  \n";
 }
 
 void CliArgs::parse(int argc, const char* argv[]) {
@@ -20,11 +18,6 @@ void CliArgs::parse(int argc, const char* argv[]) {
     }
 
     std::string cmd = argv[1];
-
-    if (cmd == "clean-up") {
-        cli_command = CliCommand::CleanUp;
-        return;
-    }
 
     if (argc == 3) {
         argument = argv[2]; 

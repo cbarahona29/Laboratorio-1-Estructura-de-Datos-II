@@ -7,8 +7,7 @@ enum class CliCommand {
     Agregar,
     Eliminar,
     Buscar,
-    Actualizar,
-    CleanUp
+    Actualizar
 };
 
 class CliArgs {
@@ -29,6 +28,6 @@ private:
 private:
     std::string program;
     std::optional<CliCommand> cli_command;
-    std::string argument; // Guarda el <archivo_json> o <no_cuenta>
+    std::string argument;
     bool good = true;
 };
